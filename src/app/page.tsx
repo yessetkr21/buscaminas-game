@@ -61,61 +61,58 @@ export default function Home() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-100 flex flex-col px-4">
-      <div className="flex justify-center py-6">
-        <h1 className="text-3xl md:text-4xl font-bold text-gray-800 text-center">
-          BUSCAMINAS 💣
-        </h1>
+    <div className="min-h-screen bg-gray-100 flex flex-col items-center px-4 pt-4 sm:pt-8">
+      {/* Título */}
+      <h1 className="text-3xl md:text-4xl font-bold text-gray-800 text-center py-4 sm:py-6">
+        BUSCAMINAS 💣
+      </h1>
+
+      {/* Botón iniciar */}
+      <button
+        onClick={startGame}
+        className="px-4 py-2 md:px-6 md:py-2 bg-stone-600 text-white rounded-lg hover:bg-blue-700 transition text-sm md:text-base mb-4"
+      >
+        {isStarted ? "🔄 Reiniciar" : "🚀 Iniciar juego"}
+      </button>
+
+      {/* Tablero */}
+      <div
+        className="grid gap-1 sm:gap-2 bg-amber-50 p-3 sm:p-8 rounded-lg shadow-md"
+        style={{
+          gridTemplateColumns: `repeat(${size}, minmax(0, min(14vw, 4rem)))`,
+        }}
+      >
+        {Array.from({ length: totalCells }, (_, index) => (
+          <div
+            key={index}
+            onClick={() => handleClick(index)}
+            className={`flex items-center justify-center text-xs sm:text-lg font-bold rounded-lg cursor-pointer transition-colors
+              ${
+                revealed[index]
+                  ? "bg-white text-black border border-gray-400"
+                  : "bg-blue-500 text-white hover:bg-blue-600"
+              }`}
+            style={{
+              aspectRatio: "1 / 1",
+              minWidth: "2.2rem",
+              maxWidth: "4rem",
+            }}
+          >
+            {revealed[index] || gameOver
+              ? mines.includes(index)
+                ? "💣"
+                : getNeighborMineCount(index)
+              : ""}
+          </div>
+        ))}
       </div>
 
-      <div className="flex justify-center mb-4">
-        <button
-          onClick={startGame}
-          className="px-4 py-2 md:px-6 md:py-2 bg-stone-600 text-white rounded-lg hover:bg-blue-700 transition text-sm md:text-base"
-        >
-          {isStarted ? "🔄 Reiniciar" : "🚀 Iniciar juego"}
-        </button>
-      </div>
-
-      <div className="flex-1 flex items-center justify-center">
-        <div
-          className="grid gap-1 sm:gap-2 bg-amber-50 p-3 sm:p-8 rounded-lg shadow-md"
-          style={{
-            gridTemplateColumns: `repeat(${size}, minmax(0, min(12vw, 4rem)))`,
-          }}
-        >
-          {Array.from({ length: totalCells }, (_, index) => (
-            <div
-              key={index}
-              onClick={() => handleClick(index)}
-              className={`flex items-center justify-center text-xs sm:text-lg font-bold rounded-lg cursor-pointer transition-colors
-                ${
-                  revealed[index]
-                    ? "bg-white text-black border border-gray-400"
-                    : "bg-blue-500 text-white hover:bg-blue-600"
-                }`}
-              style={{
-                aspectRatio: "1 / 1",
-                minWidth: "2.2rem",
-                maxWidth: "4rem",
-              }}
-            >
-              {revealed[index] || gameOver
-                ? mines.includes(index)
-                  ? "💣"
-                  : getNeighborMineCount(index)
-                : ""}
-            </div>
-          ))}
-        </div>
-      </div>
-
+      {/* Mensaje debajo del tablero */}
       {gameOver && (
-        <div className="text-center text-red-900 font-bold text-lg md:text-xl mt-6 animate-bounce">
+        <div className="text-center text-red-900 font-bold text-lg md:text-xl mt-3 animate-bounce">
           💥 ¡Has perdido! Inténtalo de nuevo.
         </div>
       )}
     </div>
   );
 }
-
