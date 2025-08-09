@@ -8,7 +8,8 @@ Un juego clásico de **Buscaminas** desarrollado con **Next.js** y **React Hooks
 
 ## 📸 Vista previa
 
-<img width="1870" height="880" alt="image" src="https://github.com/user-attachments/assets/6248f5f4-9f76-4dcc-895d-699bbecefba7" />
+<img width="1888" height="884" alt="image" src="https://github.com/user-attachments/assets/a7281354-0008-48c3-b341-a1af2f4ee884" />
+
 
 ---
 
