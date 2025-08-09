@@ -1,36 +1,52 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 💣 Buscaminas - Next.js Game
 
-## Getting Started
+Un juego clásico de **Buscaminas** desarrollado con **Next.js** y **React Hooks**, completamente responsive y desplegado en **Vercel**.
 
-First, run the development server:
+🔗 **Juega aquí:** [https://buscaminas-game.vercel.app/](https://buscaminas-game.vercel.app/)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+---
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 📸 Vista previa
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+<img width="1870" height="880" alt="image" src="https://github.com/user-attachments/assets/6248f5f4-9f76-4dcc-895d-699bbecefba7" />
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+---
 
-## Learn More
+## 🚀 Características
 
-To learn more about Next.js, take a look at the following resources:
+- Tablero **6x6** con **6 minas** colocadas aleatoriamente.
+- Contador automático de minas cercanas.
+- Detección de derrota al pisar una mina.
+- Opción de reiniciar el juego sin recargar la página.
+- Diseño **responsive**, jugable en móvil, tablet y escritorio.
+- Interfaz minimalista con **Tailwind CSS**.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 🛠 Tecnologías usadas
 
-## Deploy on Vercel
+- [Next.js](https://nextjs.org/) - Framework de React.
+- [React](https://react.dev/) - Librería de UI.
+- [Tailwind CSS](https://tailwindcss.com/) - Estilos responsivos.
+- [Vercel](https://vercel.com/) - Hosting y despliegue.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+---
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 📦 Instalación y ejecución local
+
+1. **Clona este repositorio**
+   ```bash
+   git clone https://github.com/yessetkr21/buscaminas-game.git
+   cd buscaminas-game
+Instala las dependencias
+npm i
+🎮 Cómo jugar
+Pulsa "🚀 Iniciar juego".
+
+Haz clic en cualquier celda para revelarla.
+
+El número indica cuántas minas hay alrededor.
+
+Si tocas una mina 💣, pierdes y se revelan todas las celdas.
+
+Pulsa "🔄 Reiniciar" para volver a jugar.
